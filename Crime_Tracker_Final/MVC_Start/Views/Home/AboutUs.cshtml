@@ -1,0 +1,356 @@
+﻿@model CrimeResult
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>Crime Tracker</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:400,300%7CLibre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="~/css/settings.css">
+        <link rel="stylesheet" type="text/css" href="~/css/simple-line-icons.css">
+        <link rel="stylesheet" type="text/css" href="~/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="~/css/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="~/css/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="~/css/jquery.timepicker.css">
+        <link rel="stylesheet" type="text/css" href="~/css/jquery.fancybox.css">
+        <link rel="stylesheet" type="text/css" href="~/css/jquery.selectBox.css">
+        <link rel="stylesheet" type="text/css" href="~/css/global.css">
+        <link rel="stylesheet" type="text/css" href="~/css/style.css">
+        <link rel="stylesheet" type="text/css" href="~/css/responsive.css">
+        <link rel="stylesheet" type="text/less" href="~/css/skin.less">
+    </head>
+
+    <body data-ng-app="themeonApp">
+
+        <!--Loader Start-->
+        <div class="loader">
+            <div class="sk-circle">
+                <div class="sk-circle1 sk-child"></div>
+                <div class="sk-circle2 sk-child"></div>
+                <div class="sk-circle3 sk-child"></div>
+                <div class="sk-circle4 sk-child"></div>
+                <div class="sk-circle5 sk-child"></div>
+                <div class="sk-circle6 sk-child"></div>
+                <div class="sk-circle7 sk-child"></div>
+                <div class="sk-circle8 sk-child"></div>
+                <div class="sk-circle9 sk-child"></div>
+                <div class="sk-circle10 sk-child"></div>
+                <div class="sk-circle11 sk-child"></div>
+                <div class="sk-circle12 sk-child"></div>
+            </div>
+        </div>
+        <!--Loader End-->
+        <!--Page Wrapper Start-->
+        <div id="wrapper" class="home">
+
+            <!--Header Section Start-->
+            <header id="header" class="header">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-xs-12">
+                            <div class="header-cont clearfix">
+                                <a href="index.html" class="logo"> <img src="~/images/logo.png" alt="" /> </a>
+                                <div class="header-info">
+                                    <div class="social-content clearfix">
+                                        <div class="contact-det hidden-xs">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Our Crew </a>/
+                                                </li>
+                                                <li>
+                                                    <a href="tel:+88001234567">+1 347 247 9826 </a>/
+                                                </li>
+                                                <li>
+                                                    <a href="mailto:mail@letsdrive.com">crimetracker.org</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="social-det">
+                                            <ul>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <nav class="navbar">
+
+                                        <!-- Brand and toggle get grouped for better mobile display -->
+                                        <div class="navbar-header">
+                                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                                <span class="sr-only">Toggle navigation</span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                            </button>
+                                        </div>
+
+                                        <!-- Collect the nav links, forms, and other content for toggling -->
+                                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                            <ul class="nav navbar-nav navigation clearfix">
+
+                                                <li class="active">
+                                                    <a href="index.html">HOME</a>
+                                                </li>
+                                                <li class="drop-down-parent">
+                                                    <a href="#">CRIMINAL RECORDS <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i> <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i> </a>
+
+                                                    <ul class="drop-down">
+                                                        <li>
+                                                            <a href="search-records.html">SEARCH RECORDS</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <a href="aboutus.html">ABOUT US</a>
+                                                </li>
+                                            </ul>
+                                        </div><!-- /.navbar-collapse -->
+
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--Header Section End-->
+            <!--Content Section Start-->
+            <div id="content">
+                <section class="banner2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 ">
+                                <h1>About Us</h1>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="about-few-words">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-7">
+                                <h5 class="view-title-style"> Few words about us</h5>
+                                <div class="about-contact-para">
+                                    <p>
+                                        Do you know everything about your neighborhood?
+                                        Do you ever wonder whether you can call your house a safe haven?
+                                    </p>
+                                    <p>
+                                        In the current era, it has become more of necessity than choice to understand the city you live in or as a matter of fact, even do research about the city you want to travel to. Being well informed about it is a key to staying safe.
+                                    </p>
+                                    <p>
+                                        We aim to provide the public with valuable information about recent crime activity in their neighborhood and serve, protect, and defend the community while preserving the rights and dignity of everyone around us.
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <div class="about-us-quote clearfix">
+                                    <figure>
+                                        <img src="~/images/client-pic.png" alt="contact-quote" />
+                                    </figure>
+                                    <div class="quote-wrap">
+                                        <p>
+                                            Crime Tracker is designed to give you as much live information on crime statistics as possible and provides you with the exact information you need by giving you the provision to search for the crime types based on location. We have also provided functionality to look up the details based on the year the crime was committed. Our database has a collection of relevant and live data from several national agencies.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <div class="ERD">
+                                    <figure>
+                                        <h1 style="margin-bottom:150px;margin-left:100px">CRIME DATA MODEL</h1>
+                                        <img src="~/images/EDR.png" alt="car-img" />
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="executive-team-wrapper">
+                    <div class="container">
+                        <h2> OUR <span> TEAM</span></h2>
+                        <div class="row executive-team-description">
+                            <div class="col-sm-4">
+                                <div class="executive">
+                                    <figure>
+                                        <img src="~/images/client-pic.jpg" alt="" />
+                                    </figure>
+                                    <h5>Kanchan Chowdhari</h5>
+                                    <strong>Co-Founder of Crime Tracker</strong>
+                                    <p>Kanchan is a student at USF pursuing Business Analytics and Information Systems graduate program. She has worked for over 3 years as a Data engineer and analyst. Her contributions include designing data models, extracting data from API and handling the overall backend database system. </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="executive">
+                                    <figure>
+                                        <img src="~/images/client-pic2.jpg" alt="" />
+                                    </figure>
+                                    <h5>Akib Sardar</h5>
+                                    <strong>Co-Founder of Crime Tracker</strong>
+                                    <ul class="social-links"></ul>
+                                    <p>A Business Analytics and Information Systems student at the University of South Florida. Akib joins the team with four years of IT expertise. He has previous experience in front end development and database systems. His involvement in these projects involves UI design and data mapping from the database system.</p>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="executive">
+                                    <figure>
+                                        <img src="~/images/client-pic3.jpg" alt="" />
+                                    </figure>
+                                    <h5>Samiksha Mhatre</h5>
+                                    <strong>Co-Founder of Crime Tracker</strong>
+                                    <p> A graduate student pursuing Business Analytics and Information Systems at USF. Samiksha has two years of IT experience as a Software Engineer and an Analyst. Her contributions includes doing research on project ideas, data modelling and handling the backend code in C#</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="GITHUB" style="margin-bottom:100px">
+                        <h2>GITHUB LINK</h2>
+                        <h4 style="margin-bottom:30px">https://github.com/SamikshaMhatre97/ISM6225_DIS_Group5</h4>
+                        <h2>BASE URL</h2>
+                        <h4 style="margin-bottom:30px">api.usa.gov/crime/fbi/sapi/</h4>
+                        <h2>State level UCR Estimated Crime Data Endpoint</h2>
+                        <h4 style="margin-bottom:30px">/api/summarized/estimates/states/{stateAbbr}/{since}/{until}</h4>
+                        <h2>Agency level SRS Crime Data Endpoint</h2>
+                        <h4 style="margin-bottom:30px">/api/summarized/agencies/{ori}/offenses/{since}/{until}</h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="rent-block">
+                                <h2>We are proud of our business!</h2>
+                                <h2 class="second-title">Why we are the best?</h2>
+                                <div class="rent-car-img">
+                                    <figure>
+                                        <img src="~/images/rent-car-img.png" alt="car-img" />
+                                    </figure>
+
+                                    <div class="main-features set-position1">
+
+                                        <div class="circle-section">
+                                            <div class="circle-icon">
+                                                <small>&nbsp;</small>
+                                            </div>
+                                            <div class="protect-block">
+                                                <strong>High Protection Level</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="main-features set-position2">
+
+                                        <div class="circle-section">
+                                            <div class="circle-icon">
+                                                <small>&nbsp;</small>
+                                            </div>
+                                            <div class="protect-block">
+                                                <strong>Live Database Update</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="main-features set-position3">
+
+                                        <div class="circle-section">
+                                            <div class="circle-icon">
+                                                <small>&nbsp;</small>
+                                            </div>
+                                            <div class="protect-block">
+                                                <strong>Over 120 Database center across US</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--Content Section End-->
+                <!--Footer Section start-->
+                <footer id="footer" class="bdr-0">
+                    <div class="main_fotter">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="about-us-footer">
+                                        <h5 class="view-title-style">About Us</h5>
+                                        <p>
+                                            MUMA COLLEGE OF BUSINESS
+                                            DISTRIBUTED INFORMATION SYSTEM
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-4 text-center footer-img-gap">
+                                    <a href="index.html" class="footer-logo"><img src="~/images/footer-logo.jpeg" alt="lets drive" /></a>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 text-right contact-info-footer">
+                                    <h5 class="view-title-style">Contact Us</h5>
+                                    <address>
+                                        4202 E Fowler Ave<span class="line-break"></span>
+                                        Tampa <span class="line-break"></span>
+                                        FL 33620 <span class="line-break"></span>
+                                        Email:<a href="mailto:mail@letsdrive.com"> crimetracker.org</a><span class="line-break"></span>
+                                        Phone: <a href="tel:88001234567">1 347 247 9826</a><span class="line-break"></span>
+                                    </address>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="primary-footer">
+
+                    </div>
+                    <div class="footer-bottom text-center">
+                        <div class="container">
+                            <span>&copy; All Rights Reserved. Create by TEAM USF</span>
+                        </div>
+                    </div>
+                </footer>
+
+                <!--Footer Section End-->
+                <!--Footer Section End-->
+            </div>
+            <!--Page Wrapper End-->
+            <script type="text/javascript" src="~/js/jquery-1.11.3.min.js"></script>
+            <script type="text/javascript" src="~/js/bootstrap.js"></script>
+            <script type="text/javascript" src="~/js/less.js"></script>
+            <script type="text/javascript" src="~/js/owl.carousel.js"></script>
+            <script type="text/javascript" src="~/js/jquery.selectBox.js"></script>
+            <script type="text/javascript" src="~/js/site.js"></script>
+
+    </body>
+
+</html>
+

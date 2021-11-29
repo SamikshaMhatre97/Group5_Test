@@ -1,0 +1,119 @@
+﻿@model IEnumerable<MVC_Crime_Start.Models.CrimeResult>
+
+@{
+    ViewData["Title"] = "SearchRecordTest";
+}
+
+<h2>SearchRecordTest</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.state_id)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.state_abbr)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.year)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.population)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.violent_crime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.homicide)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rape_legacy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rape_revised)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.robbery)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.aggravated_assault)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.property_crime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.burglary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.larceny)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.motor_vehicle_theft)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.arson)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.state_id)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.state_abbr)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.year)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.population)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.violent_crime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.homicide)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rape_legacy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rape_revised)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.robbery)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.aggravated_assault)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.property_crime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.burglary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.larceny)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.motor_vehicle_theft)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.arson)
+            </td>*@
+            @*<td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,103 @@
+﻿@model MVC_Crime_Start.Models.CrimeResult
+
+@{
+    ViewData["Title"] = "CreateRecord";
+}
+
+<h2>CreateRecordNew</h2>
+
+<h4>CrimeResult</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateRecord">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="state_id" class="control-label"></label>
+                <input asp-for="state_id" class="form-control" />
+                <span asp-validation-for="state_id" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="state_abbr" class="control-label"></label>
+                <input asp-for="state_abbr" class="form-control" name="sam1" />
+                <span asp-validation-for="state_abbr" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="year" class="control-label"></label>
+                <input asp-for="year" class="form-control" />
+                <span asp-validation-for="year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="population" class="control-label"></label>
+                <input asp-for="population" class="form-control" />
+                <span asp-validation-for="population" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="violent_crime" class="control-label"></label>
+                <input asp-for="violent_crime" class="form-control" name="sam2" />
+                <span asp-validation-for="violent_crime" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="homicide" class="control-label"></label>
+                <input asp-for="homicide" class="form-control" />
+                <span asp-validation-for="homicide" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rape_legacy" class="control-label"></label>
+                <input asp-for="rape_legacy" class="form-control" />
+                <span asp-validation-for="rape_legacy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rape_revised" class="control-label"></label>
+                <input asp-for="rape_revised" class="form-control" />
+                <span asp-validation-for="rape_revised" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="robbery" class="control-label"></label>
+                <input asp-for="robbery" class="form-control" />
+                <span asp-validation-for="robbery" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="aggravated_assault" class="control-label"></label>
+                <input asp-for="aggravated_assault" class="form-control" />
+                <span asp-validation-for="aggravated_assault" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="property_crime" class="control-label"></label>
+                <input asp-for="property_crime" class="form-control" />
+                <span asp-validation-for="property_crime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="burglary" class="control-label"></label>
+                <input asp-for="burglary" class="form-control" />
+                <span asp-validation-for="burglary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="larceny" class="control-label"></label>
+                <input asp-for="larceny" class="form-control" />
+                <span asp-validation-for="larceny" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="motor_vehicle_theft" class="control-label"></label>
+                <input asp-for="motor_vehicle_theft" class="form-control" />
+                <span asp-validation-for="motor_vehicle_theft" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="arson" class="control-label"></label>
+                <input asp-for="arson" class="form-control" />
+                <span asp-validation-for="arson" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="CreateRecord">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
