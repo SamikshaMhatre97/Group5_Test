@@ -27,7 +27,7 @@ namespace MVC_Crime_Start
         public void ConfigureServices(IServiceCollection services)
         {
             // Setup EF connection
-          services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["Data:CrimeTracker:ConnectionString"]));
+          services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["Data:CrimeTrackerAzure:ConnectionString"]));
 
 
 
@@ -43,12 +43,17 @@ namespace MVC_Crime_Start
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             // This ensures that the database and tables are created as per the Models.
-            //using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            //using (var servicescope = app.ApplicationServices.getservice<IServiceScopeFactory>().createscope())
             //{
-            //    var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            //    context.Database.EnsureCreated();
+            //    var context = servicescope.serviceprovider.getrequiredservice<applicationdbcontext>();
+            //    context.database.ensurecreated();
             //}
 
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                context.Database.EnsureCreated();
+            }
 
 
             // https://stackoverflow.com/a/58072137/1385857

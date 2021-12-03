@@ -129,24 +129,22 @@
                 </div>
             </section>
         </div>
-        
+
         <div class="container">
             <div class="row">
-                    <div class="table-header">
-                        <button class="UPDATE">
-                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                            <a asp-controller="Home" asp-action="UpdateRecords">UPDATE</a>
-                        </button>
-                        <button class="DELETE">
-                            <i class="fa fa-trash-o" aria-hidden="true"></i>
-                            <a asp-controller="Home" asp-action="DeleteRecords">DELETE</a>
-                        </button>
+                <div class="table-header">
+                    <button class="UPDATE">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        <a asp-controller="Home" asp-action="UpdateRecords">UPDATE</a>
+                    </button>
+                    <button class="DELETE">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i> DELETE
+                    </button>
                 </div>
             </div>
-
             <br>
             <br>
-            <div class="row col-sm-4">
+            <div class="row">
                 <h2>CREATE CRIME RECORDS</h2>
                 <br>
                 <br>
@@ -176,8 +174,6 @@
                         </div>
 
                         <div class="col-xs-12 col-sm-3">
-                            <br>
-                            <br>
                             <label>Arson</label>
                             <div class="input-wrap clearfix">
                                 <input for="arson" class="form-control" name="arson" placeholder="Arson" required>
@@ -185,8 +181,6 @@
                         </div>
 
                         <div class="col-xs-12 col-sm-3">
-                            <br>
-                            <br>
                             <label>Homicide</label>
                             <div class="input-wrap clearfix">
                                 <input for="homicide" class="form-control" name="homicide" placeholder="homicide" required>
@@ -194,8 +188,6 @@
                         </div>
 
                         <div class="col-xs-12 col-sm-3">
-                            <br>
-                            <br>
                             <label>Robbery</label>
                             <div class="input-wrap clearfix">
                                 <input for="robbery" class="form-control" name="robbery" placeholder="Robbery" required>
@@ -212,10 +204,7 @@
                 </form>
                 <br>
                 <br>
-                @if (Model != null)
-                {
-                    <p style="color:red; font-size:18px">Please click on button View Created Record to see table </p>
-                }
+
             </div>
 
             @if (ViewBag.Message != null)
@@ -229,61 +218,53 @@
 
             }
 
-        <div class="col-12">
-         
+            <div class="col-12">
 
-            <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin: 0;
-                        padding: 12px 25px;
-                        margin-top: 40px;
-                        margin-left: 0px;
-                        font-size: 16px;
-                        line-height: 1.5;
-                        color: #fff;
-                        background: #ecac4a;
-                        border: none;
-                        font-family: 'Open Sans', sans-serif;
-                        -webkit-appearance: none;">
-                View Created Record
-            </a>
-
-
-                <div class="collapse" id="collapseExample" ;>
-
-                    <form method="get" asp-controller="Home" asp-action="CreateRecord">
-                        <input type="text" id="search" name="search" onchange="setvalue()" style="margin-top:0px; border-radius: 10px;margin-left: 710px;
-                                text-align:left;width:250px;" placeholder="Enter created year" ; wrap="soft">
-                    </form>
+                <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin: 0;
+                                padding: 12px 25px;
+                                margin-top: 40px;
+                                margin-left: 0px;
+                                font-size: 16px;
+                                line-height: 1.5;
+                                color: #fff;
+                                background: #ecac4a;
+                                border: none;
+                                font-family: 'Open Sans', sans-serif;
+                                -webkit-appearance: none;">
+                    View Crime Results
+                </a>
+                <div class="collapse" id="collapseExample">
                     <div class="well">
                         @if (Model != null)
-                    {
-                        <br>
-                        <br>
-                        <table class="table" cellpadding="0" cellspacing="0" bgcolor="#f1f1f1" border="1">
-                            <thead>
-                                <tr>
-                                    <th> @Html.DisplayNameFor(model => model.state_abbr)</th>
-                                    <th> @Html.DisplayNameFor(model => model.year)</th>
-                                    <th> @Html.DisplayNameFor(model => model.population)</th>
-                                    <th> @Html.DisplayNameFor(model => model.arson)</th>
-                                    <th> @Html.DisplayNameFor(model => model.robbery)</th>
-                                    <th> @Html.DisplayNameFor(model => model.homicide)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model)
-                                {
-                                <tr>
-                                    <td>@Html.DisplayFor(modelItem => item.state_abbr)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.year)</td>
-                                    <td> @Html.DisplayFor(modelItem => item.population) </td>
-                                    <td> @Html.DisplayFor(modelItem => item.arson) </td>
-                                    <td> @Html.DisplayFor(modelItem => item.robbery) </td>
-                                    <td> @Html.DisplayFor(modelItem => item.homicide) </td>
-                                </tr>
-                                }
-                            </tbody>
-                        </table>
-                    }
+                        {
+                            <table class="table" cellpadding="0" cellspacing="0" bgcolor="#f1f1f1" border="1">
+                                <thead>
+                                    <tr>
+                                        <th> @Html.DisplayNameFor(model => model.state_abbr)</th>
+                                        <th> @Html.DisplayNameFor(model => model.year)</th>
+                                        <th> @Html.DisplayNameFor(model => model.population)</th>
+                                        <th> @Html.DisplayNameFor(model => model.arson)</th>
+                                        <th> @Html.DisplayNameFor(model => model.robbery)</th>
+                                        <th> @Html.DisplayNameFor(model => model.homicide)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@Html.DisplayFor(modelItem => item.state_abbr)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.year)</td>
+                                            <td> @Html.DisplayFor(modelItem => item.population) </td>
+                                            <td> @Html.DisplayFor(modelItem => item.arson) </td>
+                                            <td> @Html.DisplayFor(modelItem => item.robbery) </td>
+                                            <td> @Html.DisplayFor(modelItem => item.homicide) </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <canvas id="barchartexample" width="400" height="200"></canvas>
+
+                        }
                         <br>
                         <br>
                         <div class="row">
@@ -292,46 +273,107 @@
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
+    </div>
+    <br>
+    <br>
+    <!--Table Section End-->
+    <!--Footer Section start-->
+    <footer id="footer" class="bdr-0">
+        <div class="main_fotter">
+            <div class="container">
+
+            </div>
+        </div>
+        <div class="primary-footer">
 
         </div>
-    </div>
-            <br>
-            <br>
-            <!--Table Section End-->
-            <!--Footer Section start-->
-            <footer id="footer" class="bdr-0">
-                <div class="main_fotter">
-                    <div class="container">
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <span>&copy; All Rights Reserved. Create by TEAM USF</span>
+            </div>
+        </div>
+    </footer>
 
-                    </div>
-                </div>
-                <div class="primary-footer">
+    <!--Footer Section End-->
 
-                </div>
-                <div class="footer-bottom text-center">
-                    <div class="container">
-                        <span>&copy; All Rights Reserved. Created by TEAM USF</span>
-                    </div>
-                </div>
-            </footer>
+    <script>
+        //trigger the search values
+        //function setvalue() {
+        //    var data = document.getElementById("search").value;
+        //    document.getElementById("search").innerHTML = data;
+        //}
+        //function seButton(id) {
+        //    var data = document.getElementById("search").value;
+        //    document.getElementById("search").innerHTML = data;
+        //}
 
-            <!--Footer Section End-->
-            <!--Page Wrapper End-->
+        //function myFunction() {
+        //    var popup = document.getElementById("myPopup");
+        //    popup.classList.toggle("show");
+        //}
+    </script>
+    <!--Page Wrapper End-->
 
-            <script type="text/javascript" src="~/js/jquery-1.11.3.min.js"></script>
-            <script type="text/javascript" src="~/js/bootstrap.js"></script>
-            <script type="text/javascript" src="~/js/less.js"></script>
-            <script type="text/javascript" src="~/js/owl.carousel.js"></script>
-            <script type="text/javascript" src="~/js/jquery.selectBox.js"></script>
-            <script type="text/javascript" src="~/js/site.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/utils/Draggable.min.js"></script>
-            <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ThrowPropsPlugin.min.js"></script>
-            <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js?r=12"></script>
-            <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/AnticipateEase.min.js"></script>
-            <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="~/js/bootstrap.js"></script>
+    <script type="text/javascript" src="~/js/less.js"></script>
+    <script type="text/javascript" src="~/js/owl.carousel.js"></script>
+    <script type="text/javascript" src="~/js/jquery.selectBox.js"></script>
+    <script type="text/javascript" src="~/js/site.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/utils/Draggable.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ThrowPropsPlugin.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js?r=12"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/AnticipateEase.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js"></script>
+
+
+    <script>
+    new Chart(document.getElementById("barchartexample"), {
+        type: 'bar',
+        title: {
+            text: "Title in Big Fonts",
+            fontSize: 50,
+        },
+        data: {
+            labels: [@Html.Raw(ViewBag.crimes)],
+          datasets: [
+          {
+              label: "Newly Added crimes and their count",
+            backgroundColor: [@Html.Raw(ViewBag.colors)],
+            data: [@ViewBag.counts]
+          }
+        ]
+      },
+        options: {
+            aspectRatio: 6 ,
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        reverse: false,
+                        stepSize: 10000
+                    },
+                }]
+            },
+            plugins: {
+                legend: {
+                    fontSize: 30,
+                    labels: {
+
+                        font: {
+                            size: 50
+                        }
+                    }
+                }
+            }
+        }
+    });
+    </script>
 
 </body>
 

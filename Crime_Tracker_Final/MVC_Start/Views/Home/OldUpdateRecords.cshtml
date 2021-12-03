@@ -67,7 +67,7 @@
                                                 <a href="tel:+88001234567">+1 347 247 9826 </a>/
                                             </li>
                                             <li>
-                                                <a href="mailto:crimetracker@gmail.com">crimetracker.org</a>
+                                                <a href="mailto:samiksha@gmail.com">crimetracker.org</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -130,24 +130,14 @@
         </div>
 
         <div class="container">
-            <button class="UPDATE">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                <a asp-controller="Home" asp-action="CreateRecord">CREATE</a>
-            </button>
-            <button class="DELETE">
-                <i class="fa fa-trash-o" aria-hidden="true"></i> 
-                <a asp-controller="Home" asp-action="DeleteRecords">DELETE</a>
-            </button>
 
-            <br>
-            <br>
             <div class="row">
                 <h2>UPDATE CRIME RECORDS</h2>
                 <form method="get" asp-controller="Home" asp-action="UpdateRecords">
 
                     <div class="form-group">
                         <div class="col-md-12 mb-9">
-                            <label for="state_abbr" class="control-label">Enter existing state</label>
+                            <label for="state_abbr" class="control-label">STATE</label>
                             <br>
                             <input for="state_abbr" class="form-control" name="state_abbr" placeholder="STATE" required>
                         </div>
@@ -155,7 +145,7 @@
                     <div class="form-group">
                         <div class="col-md-12 mb-9">
                             <br>
-                            <label for="year" class="control-label">Enter existing year</label>
+                            <label for="year" class="control-label">YEAR</label>
                             <br>
                             <input for="year" class="form-control" name="year" placeholder="Year" required>
                         </div>
@@ -163,13 +153,13 @@
                     <div class="form-group">
                         <div class="col-md-12 mb-9">
                             <br>
-                            <label for="population" class="control-label">Enter population to be updated</label>
+                            <label for="population" class="control-label">Population</label>
                             <br>
                             <input for="population" class="form-control" name="population" placeholder="population" required>
                             <br>
                         </div>
                     </div>
-
+                    
                     <div class="form-group">
                         <input type="submit" value="Update" class="btn btn-default" />
                     </div>
@@ -177,16 +167,6 @@
 
             </div>
 
-            @if (ViewBag.Message != null)
-            {
-                <script type="text/javascript">
-
-            window.onload = function () {
-                alert("@ViewBag.Message");
-            };
-                </script>
-
-            }
             <div class="col-12">
                 <br>
                 <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin: 0;
@@ -200,7 +180,7 @@
                                 border: none;
                                 font-family: 'Open Sans', sans-serif;
                                 -webkit-appearance: none;">
-                    View Updated Record
+                    View Crime Results
                 </a>
                 <div class="collapse" id="collapseExample">
                     <div class="well">
@@ -258,13 +238,24 @@
         </div>
         <div class="footer-bottom text-center">
             <div class="container">
-                <span>&copy; All Rights Reserved. Created by TEAM USF</span>
+                <span>&copy; All Rights Reserved. Create by TEAM USF</span>
             </div>
         </div>
     </footer>
 
     <!--Footer Section End-->
 
+    <script>
+        //trigger the search values
+        function setvalue() {
+            var data = document.getElementById("search").value;
+            document.getElementById("search").innerHTML = data;
+        }
+        function seButton(id) {
+            var data = document.getElementById("search").value;
+            document.getElementById("search").innerHTML = data;
+        }
+    </script>
     <!--Page Wrapper End-->
 
     <script type="text/javascript" src="~/js/jquery-1.11.3.min.js"></script>
@@ -279,7 +270,7 @@
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js?r=12"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/AnticipateEase.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js"></script>
-  
+    <script src="~/js/bar-chart.js"></script>
 
 </body>
 

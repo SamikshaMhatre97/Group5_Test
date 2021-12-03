@@ -13,7 +13,11 @@ namespace MVC_Crime_Start.Models
         public int Id { get; set; }
         public CrimeResult[] results { get; set; }
         public Pagination pagination { get; set; }
+        public Agency[] agency { get; set; }
+
     }
+
+
 
     public class Pagination
     {
@@ -26,7 +30,7 @@ namespace MVC_Crime_Start.Models
 
     public class CrimeResult
     {
-        public CrimeResult(string state_abbr, int population, int year,int arson, int homicide, int robbery)
+        public CrimeResult(string state_abbr, int year, int population, int arson, int homicide, int robbery)
         {
             //for now only adding a few fields and limiting the ones that would be required for quering
             this.state_abbr = state_abbr;
@@ -39,15 +43,20 @@ namespace MVC_Crime_Start.Models
 
         public CrimeResult(string state_abbr, int population, int year)
         {
-             this.state_abbr = state_abbr;
+            this.state_abbr = state_abbr;
             this.population = population;
             this.year = year;
         }
 
-        public CrimeResult(string state_abbr,int year)
+        public CrimeResult(string state_abbr, int year)
         {
             this.state_abbr = state_abbr;
             this.year = year;
+        }
+
+        public CrimeResult()
+        {
+
         }
 
         public int Id { get; set; }
@@ -66,7 +75,20 @@ namespace MVC_Crime_Start.Models
         public int larceny { get; set; }
         public int motor_vehicle_theft { get; set; }
         public int arson { get; set; }
-        public CrimeRoot CrimeRoots { get; set; }
+        public List<CrimeRoot> CrimeRoots { get; set; }
+    }
+
+    public class Agency
+    {
+        public int Id { get; set; }
+        public string ori { get; set; }
+        public int data_year { get; set; }
+        public string offense { get; set; }
+        public string state_abbr { get; set; }
+        public int cleared { get; set; }
+        public int actual { get; set; }
+        public List<CrimeRoot> CrimeRoots { get; set; }
+
     }
 
 }

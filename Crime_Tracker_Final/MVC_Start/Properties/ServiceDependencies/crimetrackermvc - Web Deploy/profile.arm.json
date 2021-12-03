@@ -7,7 +7,7 @@
   "parameters": {
     "resourceGroupName": {
       "type": "string",
-      "defaultValue": "MVCStart20211109190348ResourceGroup",
+      "defaultValue": "USF_ISM6225_Distributed_Information_Systems",
       "metadata": {
         "description": "Name of the resource group for the resource. It is recommended to put resources under same resource group for better tracking."
       }
@@ -21,7 +21,7 @@
     },
     "resourceName": {
       "type": "string",
-      "defaultValue": "CrimeTrackerDIS",
+      "defaultValue": "crimetrackermvc",
       "metadata": {
         "description": "Name of the main resource to be created by this template."
       }

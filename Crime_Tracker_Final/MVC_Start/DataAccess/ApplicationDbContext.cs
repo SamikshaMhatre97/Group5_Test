@@ -11,5 +11,8 @@ namespace MVC_Crime_Start.DataAccess
         public DbSet<CrimeRoot> CrimeRoots { get; set; }
         public DbSet<Pagination> Paginations { get; set; }
 
+        public DbSet<Agency> Agency { get; set; }
+
+
     }
 }

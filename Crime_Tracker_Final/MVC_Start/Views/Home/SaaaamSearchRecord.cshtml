@@ -1,4 +1,5 @@
-﻿@model MVC_Crime_Start.Models.CrimeResult
+﻿@model IEnumerable<MVC_Crime_Start.Models.CrimeResult>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/style.css">
     <link rel="stylesheet" type="text/css" href="~/css/responsive.css">
     <link rel="stylesheet" type="text/less" href="~/css/skin.less">
+   
 </head>
 
 <body data-ng-app="themeonApp">
@@ -67,7 +69,7 @@
                                                 <a href="tel:+88001234567">+1 347 247 9826 </a>/
                                             </li>
                                             <li>
-                                                <a href="mailto:crimetracker@gmail.com">crimetracker.org</a>
+                                                <a href="mailto:crimeTracker@gmail.com">crimetracker.org</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -90,20 +92,20 @@
                                         <ul class="nav navbar-nav navigation clearfix">
 
                                             <li class="active">
-                                                <a asp-controller="Home" asp-action="Index">Home</a>
+                                                <a asp-controller="Home" asp-action="Index">HOME</a>
                                             </li>
                                             <li class="drop-down-parent">
-                                                <a asp-controller="Home" asp-action="Index">CRIMINAL RECORDS</a> <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i> <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i> </a>
+                                                <a href="#">CRIMINAL RECORDS <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i> <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i> </a>
 
                                                 <ul class="drop-down">
                                                     <li>
-                                                        <a asp-controller="Home" asp-action="SearchRecord">SEARCH RECORDS</a>
+                                                        <a asp-controller="Home" asp-action="SearchRecord">View Crime Records</a>
                                                     </li>
                                                 </ul>
                                             </li>
 
                                             <li>
-                                                <a asp-controller="Home" asp-action="AboutUs">About Us</a>
+                                                <a asp-controller="Home" asp-action="About Us">ABOUT US</a>
                                             </li>
                                         </ul>
                                     </div><!-- /.navbar-collapse -->
@@ -129,67 +131,58 @@
             </section>
         </div>
 
+
+
         <div class="container">
-            <button class="UPDATE">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                <a asp-controller="Home" asp-action="CreateRecord">CREATE</a>
-            </button>
-            <button class="DELETE">
-                <i class="fa fa-trash-o" aria-hidden="true"></i> 
-                <a asp-controller="Home" asp-action="DeleteRecords">DELETE</a>
-            </button>
-
-            <br>
-            <br>
             <div class="row">
-                <h2>UPDATE CRIME RECORDS</h2>
-                <form method="get" asp-controller="Home" asp-action="UpdateRecords">
+                <div class="col-4">
+                    <div class="table-header">
+                        <button class="CREATE">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <a asp-controller="Home" asp-action="CreateRecord">Create</a>
+                        </button>
+                        <button class="UPDATE">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <a asp-controller="Home" asp-action="UpdateRecords">UPDATE</a>
+                        </button>
+                        <button class="DELETE">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            <a asp-controller="Home" asp-action="DeleteRecords">DELETE</a>
+                        </button>
 
-                    <div class="form-group">
-                        <div class="col-md-12 mb-9">
-                            <label for="state_abbr" class="control-label">Enter existing state</label>
-                            <br>
-                            <input for="state_abbr" class="form-control" name="state_abbr" placeholder="STATE" required>
-                        </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-12 mb-9">
-                            <br>
-                            <label for="year" class="control-label">Enter existing year</label>
-                            <br>
-                            <input for="year" class="form-control" name="year" placeholder="Year" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-12 mb-9">
-                            <br>
-                            <label for="population" class="control-label">Enter population to be updated</label>
-                            <br>
-                            <input for="population" class="form-control" name="population" placeholder="population" required>
-                            <br>
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="form-group">
-                        <input type="submit" value="Update" class="btn btn-default" />
+                <div class="col-6">
+                    <div class="table-header" style="margin-top:-45px;">
+                        <form method="get" asp-controller="Home" asp-action="SearchRecord">
+                            <label for="Year" style="margin-top:0px; border-radius: 20px;margin-left: 650px; text-align:left;width:350px;">Choose a Year:</label>
+                            <button type="submit" class="btn btn-primary" style="margin-top:0px; border-radius: 10px;margin-left: 620px; 
+                                        text-align:left;width:30px; color: white; background-color:saddlebrown">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            <select name="search" id="search" style="margin-top: 0px; border-radius: 20px; margin-left: 650px; text-align: left; width: 200px; color: white; background-color: saddlebrown">
+                                <option value="none" selected disabled hidden>Select an Option</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                                <option value="2013">2013</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                            </select>
+                        </form>
                     </div>
-                </form>
+                </div>
 
             </div>
 
-            @if (ViewBag.Message != null)
-            {
-                <script type="text/javascript">
+            <div class="row">
 
-            window.onload = function () {
-                alert("@ViewBag.Message");
-            };
-                </script>
 
-            }
-            <div class="col-12">
-                <br>
-                <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin: 0;
+                <div class="col-12">
+
+                    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin: 0;
                                 padding: 12px 25px;
                                 margin-top: 40px;
                                 margin-left: 0px;
@@ -200,37 +193,45 @@
                                 border: none;
                                 font-family: 'Open Sans', sans-serif;
                                 -webkit-appearance: none;">
-                    View Updated Record
-                </a>
+                        View Crime Results
+                    </a>
+
+                    @if (Model != null)
+                    { 
+                    <p style="color:red; font-size:18px">Please click on View Results to see the output</p>
+                    }
+
                 <div class="collapse" id="collapseExample">
                     <div class="well">
                         @if (Model != null)
                         {
-                            <table class="table" cellpadding="0" cellspacing="0" bgcolor="#f1f1f1" border="1">
-                                <thead>
-                                    <tr>
-                                        <th> @Html.DisplayNameFor(model => model.state_abbr)</th>
-                                        <th> @Html.DisplayNameFor(model => model.year)</th>
-                                        <th> @Html.DisplayNameFor(model => model.population)</th>
-                                        <th> @Html.DisplayNameFor(model => model.arson)</th>
-                                        <th> @Html.DisplayNameFor(model => model.robbery)</th>
-                                        <th> @Html.DisplayNameFor(model => model.homicide)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <tr>
-                                        <td>@Html.DisplayFor(modelItem => Model.state_abbr)</td>
-                                        <td>@Html.DisplayFor(modelItem => Model.year)</td>
-                                        <td> @Html.DisplayFor(modelItem => Model.population) </td>
-                                        <td> @Html.DisplayFor(modelItem => Model.arson) </td>
-                                        <td> @Html.DisplayFor(modelItem => Model.robbery) </td>
-                                        <td> @Html.DisplayFor(modelItem => Model.homicide) </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        }
+                <table class="table" cellpadding="0" cellspacing="0" bgcolor="#f1f1f1" border="1">
+                    <thead>
+                        <tr>
+                            <th> @Html.DisplayNameFor(model => model.state_abbr)</th>
+                            <th> @Html.DisplayNameFor(model => model.year)</th>
+                            <th> @Html.DisplayNameFor(model => model.population)</th>
+                            <th> @Html.DisplayNameFor(model => model.arson)</th>
+                            <th> @Html.DisplayNameFor(model => model.robbery)</th>
+                            <th> @Html.DisplayNameFor(model => model.homicide)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.state_abbr)</td>
+                    <td>@Html.DisplayFor(modelItem => item.year)</td>
+                    <td> @Html.DisplayFor(modelItem => item.population) </td>
+                    <td> @Html.DisplayFor(modelItem => item.arson) </td>
+                    <td> @Html.DisplayFor(modelItem => item.robbery) </td>
+                    <td> @Html.DisplayFor(modelItem => item.homicide) </td>
+                </tr>
+}
+                    </tbody>
+                    @*<canvas id="barchartexample" width="150" height="50"></canvas>*@
+                </table>
+                                    <canvas id="barchartexample" width="400" height="200"></canvas>}
                         <br>
                         <br>
                         <div class="row">
@@ -239,7 +240,10 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
+                            </div>
+
             </div>
         </div>
     </div>
@@ -250,7 +254,31 @@
     <footer id="footer" class="bdr-0">
         <div class="main_fotter">
             <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="about-us-footer">
+                            <h5 class="view-title-style">About Us</h5>
+                            <p>
+                                MUMA COLLEGE OF BUSINESS
+                                DISTRIBUTED INFORMATION SYSTEM
+                            </p>
+                        </div>
+                    </div>
 
+                    <div class="col-xs-12 col-sm-4 text-center footer-img-gap">
+                        <a asp-controller="Home" asp-action="Index" class="footer-logo"><img src="~/images/footer-logo.jpeg" alt="" /></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 text-right contact-info-footer">
+                        <h5 class="view-title-style">Contact Us</h5>
+                        <address>
+                            4202 E Fowler Ave<span class="line-break"></span>
+                            Tampa <span class="line-break"></span>
+                            FL 33620 <span class="line-break"></span>
+                            Email:<a href="mailto:samiksha@gmail.com"> crimetracker.org</a><span class="line-break"></span>
+                            Phone: <a href="tel:88001234567">1 347 247 9826</a><span class="line-break"></span>
+                        </address>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="primary-footer">
@@ -261,10 +289,24 @@
                 <span>&copy; All Rights Reserved. Created by TEAM USF</span>
             </div>
         </div>
+
     </footer>
 
     <!--Footer Section End-->
 
+    <script>
+        //trigger the search values
+        function setvalue() {
+            //var data = document.getElementById("search").value;
+            //document.getElementById("search").innerHTML = data;
+            
+            var data = document.getElementById('ddlViewBy').selectedOptions[0].value;
+        }
+        function seButton(id) {
+            var data = document.getElementById("search").value;
+            document.getElementById("search").innerHTML = data;
+        }
+    </script>
     <!--Page Wrapper End-->
 
     <script type="text/javascript" src="~/js/jquery-1.11.3.min.js"></script>
@@ -279,8 +321,52 @@
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js?r=12"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/AnticipateEase.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js"></script>
-  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+
+    @*<canvas id="barchartexample" width="150" height="150"></canvas>*@
+    <script>
+    new Chart(document.getElementById("barchartexample"), {
+        type: 'bar',
+        title: {
+            text: "Title in Big Fonts",
+            fontSize: 50,
+        },
+        data: {
+            labels: [@Html.Raw(ViewBag.crimes)],
+          datasets: [
+          {
+              label: "Total Count of crimes",
+            backgroundColor: [@Html.Raw(ViewBag.colors)],
+            data: [@ViewBag.counts]
+          }
+        ]
+      },
+        options: {
+            aspectRatio: 6 ,
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        reverse: false,
+                        stepSize: 10000
+                    },
+                }]
+            },
+            plugins: {
+                legend: {
+                    fontSize: 30,
+                    labels: {
+                        // This more specific font property overrides the global property
+                        font: {
+                            size: 50
+                        }
+                    }
+                }
+            }
+        }
+    });
+    </script>
 
 </body>
-
 </html>
