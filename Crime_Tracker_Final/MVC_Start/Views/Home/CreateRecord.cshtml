@@ -146,7 +146,7 @@
 
             <br>
             <br>
-            <div class="row col-sm-4">
+            <div class="row">
                 <h2>CREATE CRIME RECORDS</h2>
                 <br>
                 <br>
@@ -229,13 +229,14 @@
 
             }
 
-        <div class="col-12">
+        <div class="col-sm-12">
          
 
             <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin: 0;
                         padding: 12px 25px;
                         margin-top: 40px;
                         margin-left: 0px;
+                        margin-bottom: 80px;
                         font-size: 16px;
                         line-height: 1.5;
                         color: #fff;
@@ -250,8 +251,8 @@
                 <div class="collapse" id="collapseExample" ;>
 
                     <form method="get" asp-controller="Home" asp-action="CreateRecord">
-                        <input type="text" id="search" name="search" onchange="setvalue()" style="margin-top:0px; border-radius: 10px;margin-left: 710px;
-                                text-align:left;width:250px;" placeholder="Enter created year" ; wrap="soft">
+                        <input type="text" id="search" name="search" onchange="setvalue()" style="margin-top:0px; border-radius: 10px;margin-left:0px;
+                                text-align:left; width:205px; position:relative; right:0; top:-70px;" placeholder="Enter created year" ; wrap="soft">
                     </form>
                     <div class="well">
                         @if (Model != null)
